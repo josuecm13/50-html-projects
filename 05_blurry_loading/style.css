@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Alkatra', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.bg {
+  background-image: url('https://images.unsplash.com/photo-1619266465172-02a857c3556d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  z-index: -1;
+  filter: blur(40px);
+  transition: filter 3s linear;
+}
+
+.bg.focus {
+  filter: blur(0);
+}
+
+span{
+  font-size: 40px;
+  font-weight: bolder;
+  color: white;
+}

@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+
+:root {
+  --input-bg: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Alkatra', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-container.show .search-input{
+  width: 250px;
+  visibility: visible;
+  border: solid #8b8b8b 3px;
+  border-width: 3px 0 3px 3px;
+  border-radius: 16px 0px 0px 16px;
+  padding: 10px 20px;
+}
+
+.search-container.show .search-input:focus {
+  outline: none;
+}
+
+.search-container.show button#search {
+  border-radius: 0 16px 16px 0;
+  border-width: 3px 3px 3px 0;
+}
+
+button#search {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  font-size: 29px;
+  border: solid #8b8b8b 3px;
+  border-width: 3px;
+  border-radius: 16px;
+  background-color: var(--input-bg);
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+
+.search-input {
+  height: 50px;
+  background-color: var(--input-bg);
+  border: none;
+  border-width: 3px 0 3px 3px;
+  padding: 0px;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}

@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Erica+One&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* --font-color: #1f1f3b;
+  --font-contrast: #ee5f00;
+  --bg-color: #d5d7fa; */
+  --font-color: #efefff;
+  --font-contrast: #ee5f00;
+  --bg-color: #0e083d;
+  --shadow-color: #100c2c;
+}
+
+body {
+  font-family: 'Mr Dafoe', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  perspective: 1000px;
+}
+
+.container {
+  display: flex;
+  background-color: var(--bg-color);
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  perspective: 1000px;
+  transition: filter 0.7s ease;
+}
+
+.container.dark {
+  filter: brightness(0.6);
+}
+
+.name-container {
+  position: relative;
+  width: 50rem;
+  height: 21rem;
+  /* border: #ee5f00 dashed 2px; */
+  transition: transform 0.4s ease, filter 0.3s linear;
+}
+
+.name-container.dark{
+  transform: rotateX(60deg) translateY(50px);
+  filter: blur(30px);
+  cursor: pointer;
+}
+
+.name-container .firstname-title {
+  top: 0%;
+  transform: translateY(-70px);
+  left: 0px;
+}
+
+.name-container .surname-title {
+  bottom: 18%;
+  left: 40%;
+}
+
+
+span {
+  position: absolute;
+  font-size: 12rem;
+  color: var(--font-color);
+  display: block;
+  margin: 0;
+  white-space: nowrap;
+  text-shadow: var(--shadow-color) 2px 4px 4px;
+}
+
+
+.firstname-title {
+  font-family: 'Erica One';
+  top: 30%;
+  left: 25%;
+  text-transform: uppercase;
+  text-shadow: var(--shadow-color) 2px 4px 4px;
+}
+
+.surname-title {
+  font-size: 8rem;
+  color: var(--font-contrast);
+  transition: transform 0.5s ease-out, opacity 0.2s ease 0.3s;
+  transform: translateX(50%);
+  opacity: 0;
+}
+
+.surname-title.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.info-container {
+  position: absolute;
+  top: calc(50% - height/2);
+  left: calc(50% - width/2);
+  width: 90vw;
+  max-width: 900px;
+  height: 500px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 2fr;
+  column-gap: 10px;
+  row-gap: 10px;
+  z-index: 100;
+  opacity: 0.1;
+  transform: rotateX(-30deg);
+  filter: blur(30px);
+  transition: transform 0.5s ease-out, opacity 0.2s ease, filter 0.5s ease-in-out;
+}
+
+.info-container.show {
+  transform: rotateX(0);
+  filter: blur(0px);
+  opacity: 1;
+  z-index: 100;
+}
+
+.info-container .top-left {
+  grid-area: 1 / 1 / 2 / 3 ;
+  width: 90%;
+  height: 90%;
+  background: #fff;
+  border-radius: 25px;
+  justify-self: center;
+  align-self: center;
+}
+
+.info-container > * {
+  box-shadow: var(--shadow-color) 2px 4px 5px;
+  justify-self: center;
+  align-self: center;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.c-1 {
+  grid-area: 2 / 1 / 3 / 2 ;
+}
+
+.c-2 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.c-3 {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+.main-content {
+  grid-area: 1 / 3 / 4 / 4;
+  width: 90%;
+  height: 97%;
+  background: #fff;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insta-qr {
+  width: auto;
+  height: 90%;
+}

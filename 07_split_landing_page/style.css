@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+ --text-color-gray:  #e4e4e4;
+ --bg-color-dark: #121212;
+ --left-bg: #652626;
+ --ps-color: #1e5ddb;
+ --xbox-color: #107C10;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #121212;
+}
+
+.split {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  width: 50vw;
+  height: 100%;
+  transition: all 0.7s ease;
+}
+
+.split span, .split a {
+  color: var(--text-color-gray);
+  margin: 100px 0px;
+}
+
+.split a {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 20px 50px;
+  border: solid var(--text-color-gray) 4px;
+  transition: all 0.2s ease-out;
+}
+
+span {
+  font-size: 3.5rem;
+  font-weight: bolder;
+  white-space: nowrap;
+}
+
+.split.left {
+  background-color: var(--text-color-gray);
+  background-image: url('https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$');
+  background-position: 40% 0%;
+}
+
+.split.left span,.split.left a {
+  color: var(--bg-color-dark);
+}
+
+.split.left a{
+  border: solid var(--bg-color-dark) 4px;
+}
+
+.split.left a:hover{
+  border: solid var(--ps-color) 4px;
+  background-color: var(--ps-color);
+  color: #fff;
+}
+
+.split.right {
+  background-image: url('https://pngimg.com/d/xbox_PNG101377.png');
+  background-position: 90% 0%;
+}
+
+.split.right a:hover{
+  border: solid var(--xbox-color) 4px;
+  background-color: var(--xbox-color);
+  color: #fff;
+}
+
+.split.active {
+  width: 90vw;
+}
+
+.split.inactive {
+  width: 10vw;
+  filter: brightness(0.5);
+}
+
